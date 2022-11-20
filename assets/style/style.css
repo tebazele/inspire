@@ -1,0 +1,46 @@
+/* BASIC STYLES HERE */
+body {
+    background-image: url("https://images.unsplash.com/photo-1667387322417-c434fa1f563d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80");
+    background-size: cover;
+    background-color: lightgray;
+}
+
+.main-min-height {
+    min-height: 20vh;
+}
+
+.quote-author {
+    visibility: hidden;
+    opacity: 0;
+    transition: ease 1.1s;
+}
+
+.quote:hover+.quote-author {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.weather-icon {
+    height: 80px;
+    width: 80px;
+}
+
+.to-do-card {
+    height: 350px;
+    width: 270px;
+    position: absolute;
+    bottom: 5vh;
+    left: 75vw;
+}
+
+/* FIXME  */
+@media (max-width: 768px) {
+    .to-do-card {
+        height: 350px;
+        width: 250px;
+        position: absolute;
+
+    }
+
+}
