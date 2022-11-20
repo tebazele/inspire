@@ -70,26 +70,23 @@
           </section>
           <!-- STUB load to-dos here -->
           <section class="row p-4 text-start" id="todo-spot">
-            <div class="col-10 d-flex">
-              <input type="checkbox">
+            <div class="col-12 d-flex" id="mytodo">
+              <!-- <input type="checkbox">
               <label class="ms-2">
                 walk the dog
-              </label>
-            </div>
-            <!-- STUB delete to-dos -->
-            <div class="col-2">
-              <i class="mdi mdi-trash-can"> </i>
+              </label> -->
             </div>
           </section>
           <!-- STUB add to-do -->
           <section class="row p-4">
-            <div class="col-10">
-              <label for="todo">Add todo</label>
-              <div class="d-flex">
-                <input type="text" name="todo" id="todo">
-                <button class="btn btn-outline-dark"> + </button>
-
-              </div>
+            <div class="col-12">
+              <form onsubmit="app.todosController.createTodo()">
+                <label for="todo">Add todo</label>
+                <div class="d-flex">
+                  <input type="text" name="todo" id="todo">
+                  <button class="btn btn-outline-dark"> + </button>
+                </div>
+              </form>
             </div>
           </section>
 

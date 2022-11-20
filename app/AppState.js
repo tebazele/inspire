@@ -12,9 +12,12 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Weather.js').Weather|null} */
   weather = null
-
-
+  /** @type {string|null} */
   myDate = null
+
+  /** @type {import('./Models/Todo.js').Todo[]} */
+  myTodos = []
+
 }
 
 export const appState = new Proxy(new AppState(), {
