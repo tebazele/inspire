@@ -6,11 +6,13 @@ let myTodoApi = axios.create({
     baseURL: 'https://bcw-sandbox.herokuapp.com/api/jeanne/todos'
 })
 class TodosService {
+
     async getTodos() {
         try {
             let response = await myTodoApi.get()
             // console.log(response.data);
             appState.myTodos = response.data.map(t => new Todo(t))
+            appState.todoCount = appState.myTodos.length
             // console.log(appState.myTodos);
         } catch (error) {
             console.error(error)
@@ -25,7 +27,8 @@ class TodosService {
             let response = await myTodoApi.post('', newTodo)
             console.log(response.data);
             appState.myTodos = [...appState.myTodos, new Todo(response.data)]
-            console.log(appState.myTodos);
+            appState.todoCount++
+            // console.log(appState.myTodos);
 
         } catch (error) {
             console.error(error)
@@ -44,6 +47,11 @@ class TodosService {
         let foundTodo = appState.myTodos.find(t => t.id == todoId)
         let response = await myTodoApi.delete(foundTodo.id)
         console.log(response.data);
+        appState.todoCount--
+    }
+
+    getTodoCount() {
+        console.log(appState.myTodos.length);
     }
 
 }

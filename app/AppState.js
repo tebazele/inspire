@@ -18,6 +18,7 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Todo.js').Todo[]} */
   myTodos = []
 
+  todoCount = 0
 }
 
 export const appState = new Proxy(new AppState(), {
