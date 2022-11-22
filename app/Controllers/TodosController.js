@@ -35,4 +35,13 @@ export class TodosController {
         // @ts-ignore
         form.reset()
     }
+
+    async completeTodo(todoId) {
+        // trigger this on change when checkbox is clicked
+        // find the Todo by id, flip the bool .completed
+        // edit the Todo in the api
+        // redraw Todos from api - getTodos()
+        await todosService.completeTodo(todoId)
+        this.getTodos()
+    }
 }

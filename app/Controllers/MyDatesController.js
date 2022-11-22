@@ -15,7 +15,7 @@ export class MyDatesController {
 
     getDate() {
         myDatesService.getDate()
-        console.log(appState.myDate);
+        // console.log(appState.myDate);
         this.updateDate()
     }
 
