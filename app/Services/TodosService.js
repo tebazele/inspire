@@ -40,6 +40,11 @@ class TodosService {
         const response = await myTodoApi.put(todoId, foundTodo)
         // console.log(response.data);
     }
+    async removeTodo(todoId) {
+        let foundTodo = appState.myTodos.find(t => t.id == todoId)
+        let response = await myTodoApi.delete(foundTodo.id)
+        console.log(response.data);
+    }
 
 }
 

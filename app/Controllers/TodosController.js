@@ -1,6 +1,7 @@
 import { appState } from "../AppState.js"
 import { todosService } from "../Services/TodosService.js"
 import { getFormData } from "../Utils/FormHandler.js"
+import { Pop } from "../Utils/Pop.js"
 import { setHTML } from "../Utils/Writer.js"
 
 function _drawMyTodos() {
@@ -43,5 +44,16 @@ export class TodosController {
         // redraw Todos from api - getTodos()
         await todosService.completeTodo(todoId)
         this.getTodos()
+    }
+
+    async removeTodo(todoId) {
+        if (Pop.confirm('Are you sure you want to delete this todo?', '')) {
+            await todosService.removeTodo(todoId)
+            this.getTodos()
+        }
+    }
+
+    getTodoCount() {
+
     }
 }

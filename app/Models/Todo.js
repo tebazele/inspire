@@ -14,14 +14,14 @@ export class Todo {
               <label class="ms-2">
                 ${this.description}
               </label>
-              <i class="mdi mdi-trash-can"> </i><br>`
+              <i class="mdi mdi-trash-can selectable" onclick="app.todosController.removeTodo('${this.id}')"> </i><br>`
     } else {
       return `
             <input type="checkbox" checked onchange="app.todosController.completeTodo('${this.id}')">
               <label class="ms-2">
                 ${this.description}
               </label>
-              <i class="mdi mdi-trash-can"> </i><br>`
+              <i class="mdi mdi-trash-can selectable" onclick="app.todosController.removeTodo('${this.id}')"> </i><br>`
     }
 
   }
