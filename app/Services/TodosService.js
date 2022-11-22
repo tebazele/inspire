@@ -11,17 +11,19 @@ class TodosService {
             let response = await myTodoApi.get()
             // console.log(response.data);
             appState.myTodos = response.data.map(t => new Todo(t))
-            // console.log(appState.myTodos);
+            console.log(appState.myTodos);
         } catch (error) {
             console.error(error)
         }
     }
     async createTodo(todoDescription) {
         try {
-            let newTodo = new Todo(todoDescription)
-            // console.log(newTodo)
+            let newTodo = new Todo({})
+            newTodo.description = todoDescription
+            newTodo.completed = false
+            console.log(newTodo)
             let response = await myTodoApi.post('', newTodo)
-            // console.log(response.data);
+            console.log(response.data);
             appState.myTodos = [...appState.myTodos, response.data]
 
         } catch (error) {

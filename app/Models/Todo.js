@@ -1,9 +1,9 @@
 import { generateId } from "../Utils/generateId.js"
 
 export class Todo {
-    constructor(description) {
-        this.completed = false
-        this.description = description
+    constructor(data) {
+        this.completed = data.completed || false
+        this.description = data.description || ''
         this.id = generateId()
     }
 
