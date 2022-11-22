@@ -14,12 +14,17 @@ function _drawTodoCount() {
     setText('todo-count', appState.todoCount)
 }
 
+function _drawCompletedTodoCount() {
+    setText('completed-todos', appState.completedTodoCount)
+}
+
 export class TodosController {
     constructor() {
         // console.log('todo controller linked up');
         this.getTodos()
         appState.on('myTodos', _drawMyTodos)
         appState.on('todoCount', _drawTodoCount)
+        appState.on('completedTodoCount', _drawCompletedTodoCount)
 
     }
 
@@ -63,5 +68,9 @@ export class TodosController {
     getTodoCount() {
         todosService.getTodoCount()
 
+    }
+
+    getCompletedTodoCount() {
+        todosService.getCompletedTodoCount()
     }
 }

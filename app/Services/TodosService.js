@@ -12,6 +12,7 @@ class TodosService {
             let response = await myTodoApi.get()
             // console.log(response.data);
             appState.myTodos = response.data.map(t => new Todo(t))
+            this.getCompletedTodoCount()
             appState.todoCount = appState.myTodos.length
             // console.log(appState.myTodos);
         } catch (error) {
@@ -27,6 +28,7 @@ class TodosService {
             let response = await myTodoApi.post('', newTodo)
             console.log(response.data);
             appState.myTodos = [...appState.myTodos, new Todo(response.data)]
+            this.getCompletedTodoCount()
             appState.todoCount++
             // console.log(appState.myTodos);
 
@@ -41,17 +43,31 @@ class TodosService {
         foundTodo.completed = !foundTodo.completed
         // console.log(foundTodo);
         const response = await myTodoApi.put(todoId, foundTodo)
+        this.getCompletedTodoCount()
         // console.log(response.data);
+
     }
     async removeTodo(todoId) {
         let foundTodo = appState.myTodos.find(t => t.id == todoId)
         let response = await myTodoApi.delete(foundTodo.id)
         console.log(response.data);
+        this.getCompletedTodoCount()
         appState.todoCount--
     }
 
     getTodoCount() {
         console.log(appState.myTodos.length);
+    }
+
+    getCompletedTodoCount() {
+        let counter = 0
+        appState.myTodos.forEach(t => {
+
+            if (t.completed) {
+                counter++
+            }
+        })
+        appState.completedTodoCount = counter
     }
 
 }

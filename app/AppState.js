@@ -18,6 +18,8 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Todo.js').Todo[]} */
   myTodos = []
 
+  completedTodoCount = 0
+
   todoCount = 0
 }
 
