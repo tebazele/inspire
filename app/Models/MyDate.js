@@ -6,6 +6,8 @@ export class MyDate {
     get ComputeTime() {
         let now = new Date()
         let hours = now.getHours()
+        hours = hours % 12
+        hours = hours ? hours : 12
         let minutes = now.getMinutes()
         let seconds = now.getSeconds()
         let minutesString = ''

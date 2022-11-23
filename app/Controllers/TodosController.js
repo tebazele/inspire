@@ -40,6 +40,7 @@ export class TodosController {
     createTodo() {
         window.event.preventDefault()
         let form = window.event.target
+        // @ts-ignore
         let todoDescription = form.todo.value
         // console.log(todoDescription);
         todosService.createTodo(todoDescription)
@@ -58,7 +59,7 @@ export class TodosController {
     }
 
     async removeTodo(todoId) {
-        if (Pop.confirm('Are you sure you want to delete this todo?', '')) {
+        if (await Pop.confirm('Are you sure you want to delete this todo?', '')) {
             await todosService.removeTodo(todoId)
             this.getTodos()
 

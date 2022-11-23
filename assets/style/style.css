@@ -3,10 +3,39 @@ body {
     background-image: url("https://images.unsplash.com/photo-1667387322417-c434fa1f563d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80");
     background-size: cover;
     background-color: lightgray;
+    min-height: 100vh;
 }
 
-.main-min-height {
-    min-height: 20vh;
+.bg-translucent {
+    background-color: hsla(0, 0%, 0%, .5);
+}
+
+.min-width-25 {
+    min-width: 28vw;
+}
+
+.min-width-20 {
+    min-width: 20vw;
+}
+
+.min-width-50 {
+    min-width: 50vw;
+}
+
+.align-middle {
+    min-height: 40vh;
+}
+
+.height-30 {
+    height: 30px;
+}
+
+.quote-width {
+    max-width: 420px;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 2px rgb(79, 74, 74);
 }
 
 .quote-author {
@@ -26,21 +55,63 @@ body {
     width: 80px;
 }
 
-.to-do-card {
-    height: 350px;
-    width: 270px;
-    position: absolute;
-    bottom: 5vh;
-    left: 75vw;
+.font-xl {
+    font-size: 72px;
 }
 
-/* FIXME  */
-@media (max-width: 768px) {
-    .to-do-card {
-        height: 350px;
-        width: 250px;
-        position: absolute;
+.input-add {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    background-color: hsla(0, 0%, 0%, .0);
+    margin-right: 10px;
+    color: white;
+    outline: none;
+}
 
+.min-height-todo {
+    min-height: 45vh;
+}
+
+.bodoni-moda {
+    font-family: 'Bodoni Moda',
+        serif;
+
+}
+
+.arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.alexandria {
+    font-family: 'Alexandria', sans-serif;
+}
+
+.alexandria-bold {
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .min-width-25 {
+        min-width: 94vw;
+        max-height: 350px;
     }
 
+    .min-height-todo {
+        min-height: 10vh;
+    }
+
+    .min-width-20 {
+        min-width: 20vw;
+    }
+
+    .min-width-50 {
+        min-width: 50vw;
+    }
+
+    .align-middle {
+        min-height: 7vh;
+    }
 }

@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&family=Bodoni+Moda:opsz@6..96&display=swap"
+    rel="stylesheet">
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
@@ -16,97 +21,96 @@
 </head>
 
 <body>
+  <header class="height-30">
 
-  <header class="container-fluid">
-    <section class="row p-3 justify-content-between text-light">
-      <div class="col-2">
-        <h6>Image By: <span id="img-author"></span></h6>
-      </div>
-      <div class="col-4 text-end">
-        <div class="card text-dark p-2 text-center" id="weather-spot"
-          onclick="app.weatherController.celsiusFahrenheitSwitch()">
-          <!-- <p>
-            <span>High: 38<i class="mdi mdi-arrow-up"></i> </span>
-            <span>Low: 17<i class="mdi mdi-arrow-down"></i></span>
-          </p>
-          <h3>35</h3>
-          <p>Feels like
-            <span>30</span>
-          </p>
-          <h1><i class="mdi mdi-cloud">ICON</i></h1>
-          <p>Partly Cloudy</p> -->
-
-
-        </div>
-      </div>
-    </section>
   </header>
-  <main class="container-fluid">
-    <section class="row p-3 text-center justify-content-between text-light main-min-height">
-      <div class="col-6 col-xl-4">
-        <h1 id="time"></h1>
-        <div id="quote-spot">
-          <!-- <p class="py-5 quote">"Inspirational quote: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Fugit dolores
-            molestias
-            laboriosam a nesciunt deleniti praesentium sunt? Beatae dolores non ipsa placeat dolore deleniti, id cum sed
-            aliquam voluptates repellat."</p>
-          <h4 class="quote-author">Author of Quote</h4> -->
-
+  <main class="container-fluid d-lg-flex d-block text-light">
+    <div class="p-lg-4 p-3 justify-content-center min-width-25 bg-translucent rounded elevation-2 bodoni-moda">
+      <section class="row p-md-3 ps-md-2 p-0">
+        <div class="col-6">
+          <h5>Todo List</h5>
         </div>
-      </div>
-      <div class="col-4">
-
-        <!-- SECTION to-do card -->
-
-        <div class="card text-dark text-start">
-          <section class="row p-3 ps-4">
-            <div class="col-6">
-              <p>todo</p>
-            </div>
-            <div class="col-6 text-end">
-              <p><span id="completed-todos">0</span>/<span id="todo-count"></span> completed</p>
-            </div>
-          </section>
-          <!-- STUB load to-dos here -->
-          <section class="row p-4 text-start" id="todo-spot">
-            <div class="col-12" id="mytodo">
-              <!-- <input type="checkbox">
+        <div class="col-6 text-end">
+          <p><span id="completed-todos">0</span>/<span id="todo-count"></span> completed</p>
+        </div>
+      </section>
+      <!-- STUB load to-dos here -->
+      <section class="row p-3 text-start" id="todo-spot">
+        <div class="col-12 min-height-todo" id="mytodo">
+          <!-- <input type="checkbox">
               <label class="ms-2">
                 walk the dog
               </label> -->
-            </div>
-          </section>
-          <!-- STUB add to-do -->
-          <section class="row p-4">
-            <div class="col-12">
-              <form onsubmit="app.todosController.createTodo()">
-                <label for="todo">Add todo</label>
-                <div class="d-flex">
-                  <input type="text" name="todo" id="todo">
-                  <button class="btn btn-outline-dark"> + </button>
-                </div>
-              </form>
-            </div>
-          </section>
-
-
         </div>
+      </section>
+      <!-- STUB add to-do -->
+      <section class="row ps-2">
+        <div class="col-12">
+          <form onsubmit="app.todosController.createTodo()">
+            <label for="todo">Add todo</label>
+            <div class="d-flex">
+              <input type="text" name="todo" id="todo" class="input-add">
+              <button class="btn btn-outline-light px-3 arial">+</button>
+            </div>
+          </form>
+        </div>
+      </section>
 
+
+    </div>
+
+
+
+
+    <div class="text-center text-light min-width-50">
+      <section class="row align-middle"></section>
+      <section class="row">
+        <div class="col-12">
+          <h1 id="time" class="font-xl text-shadow alexandria-bold"></h1>
+        </div>
+        <div class="col-12 d-flex justify-content-center text-shadow">
+          <div id="quote-spot" class="quote-width bodoni-moda">
+            <!-- <p class="py-5 quote">"Inspirational quote: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Fugit dolores
+              molestias
+              laboriosam a nesciunt deleniti praesentium sunt? Beatae dolores non ipsa placeat dolore deleniti, id cum sed
+              aliquam voluptates repellat."</p>
+            <h4 class="quote-author">Author of Quote</h4> -->
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+    <div class="min-width-20 m-3 m-lg-0">
+      <div class="bg-translucent rounded p-2 me-2">
+        <section class="row justify-content-center">
+          <div class="col-12">
+            <div class="p-2 text-center alexandria" id="weather-spot"
+              onclick="app.weatherController.celsiusFahrenheitSwitch()">
+              <!-- <p>
+              <span>High: 38<i class="mdi mdi-arrow-up"></i> </span>
+              <span>Low: 17<i class="mdi mdi-arrow-down"></i></span>
+            </p>
+            <h3>35</h3>
+            <p>Feels like
+              <span>30</span>
+            </p>
+            <h1><i class="mdi mdi-cloud">ICON</i></h1>
+            <p>Partly Cloudy</p> -->
+            </div>
+          </div>
+        </section>
 
       </div>
 
-    </section>
-
+    </div>
 
   </main>
-  <footer class="container-fluid">
-    <section class="row p-5 text-light text-center">
-      <div class="col-12">
-        <h6>Get Inspired</h6>
-
-      </div>
-    </section>
+  <footer>
+    <div class="text-end p-3 text-light">
+      <h6 class="text-shadow">Image By: <span id="img-author"></span></h6>
+    </div>
   </footer>
 
 

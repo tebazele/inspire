@@ -21,7 +21,9 @@ export class Todo {
               <label class="ms-2">
                 ${this.description}
               </label>
-              <i class="mdi mdi-trash-can selectable" onclick="app.todosController.removeTodo('${this.id}')"> </i><br>`
+              
+              <i class="mdi mdi-trash-can selectable" onclick="app.todosController.removeTodo('${this.id}')"> </i><br>
+              `
     }
 
   }
